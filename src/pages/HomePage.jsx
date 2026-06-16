@@ -7,6 +7,13 @@ function Home() {
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const openForm = () => {
+    window.open(
+      "https://docs.google.com/forms/d/e/1FAIpQLSdTstF74bgWi957hsJ6DWa_2BWpFgKD0rTtAn7awuK1kY0a7g/viewform",
+      "_blank"
+    );
+  };
+
   return (
     <div className="min-h-screen font-[Poppins]">
 
@@ -14,7 +21,7 @@ function Home() {
       <nav className="sticky top-0 bg-white shadow-md z-50">
         <div className="flex justify-between items-center px-6 py-4">
 
-          {/* LOGO */}
+          {/* ✅ LOGO */}
           <div className="flex items-center gap-2">
             <img
               src={logo}
@@ -26,7 +33,7 @@ function Home() {
             </h1>
           </div>
 
-          {/* Desktop Menu */}
+          {/* ✅ DESKTOP MENU */}
           <div className="hidden md:flex gap-6 items-center">
             <button onClick={() => navigate("/")}>Home</button>
             <button onClick={() => navigate("/destinations")}>
@@ -42,22 +49,16 @@ function Home() {
               Contact
             </button>
 
-
 			<button
-			  onClick={() =>
-			    window.open(
-			      "https://docs.google.com/forms/d/e/1FAIpQLSdTstF74bgWi957hsJ6DWa_2BWpFgKD0rTtAn7awuK1kY0a7g/viewform",
-			      "_blank"
-			    )
-			  }
-			  className="bg-[#F7941D] text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600"
+			  onClick={() => navigate("/plan")}
+			  className="bg-[#F7941D] text-white px-6 py-3 rounded-lg font-semibold"
 			>
-			  Plan Trip
+			  Plan Trip 🚀
 			</button>
 
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* ✅ MOBILE MENU BUTTON */}
           <button
             className="md:hidden text-xl"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -66,7 +67,7 @@ function Home() {
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* ✅ MOBILE MENU */}
         {menuOpen && (
           <div className="md:hidden px-6 pb-4 flex flex-col gap-3 bg-white">
             <button onClick={() => navigate("/")}>Home</button>
@@ -74,8 +75,9 @@ function Home() {
             <button onClick={() => navigate("/itineraries")}>Itineraries</button>
             <button onClick={() => navigate("/about")}>About</button>
             <button onClick={() => navigate("/contact")}>Contact</button>
+
             <button
-              onClick={() => navigate("/plan")}
+              onClick={openForm}
               className="bg-[#F7941D] text-white px-4 py-2 rounded-lg"
             >
               Plan Trip
@@ -92,26 +94,25 @@ function Home() {
         <div className="absolute w-[400px] h-[400px] bg-blue-400 opacity-20 rounded-full blur-3xl bottom-[-100px] right-[-100px]" />
 
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           className="relative z-10"
         >
-          <h1 className="text-3xl md:text-6xl font-bold mb-6">
+          <h1 className="text-3xl md:text-6xl font-bold mb-6 leading-tight">
             Your Journey <br />
             <span className="text-[#F7941D]">
               Crafted Just For You
             </span>
           </h1>
 
-          <p className="max-w-2xl mx-auto text-gray-300 mb-8">
-            Personalized itineraries, budget planning, and travel assistance
-            across India.
+          <p className="max-w-2xl mx-auto text-gray-300 mb-8 text-lg">
+            Personalized itineraries, budget planning, and complete travel support across India.
           </p>
 
           <div className="flex flex-col md:flex-row justify-center gap-4">
             <button
-              onClick={() => navigate("/plan")}
+              onClick={openForm}
               className="bg-[#F7941D] px-8 py-3 rounded-xl font-semibold hover:scale-105 transition"
             >
               Craft My Trip 🚀
@@ -158,21 +159,21 @@ function Home() {
           <div className="p-6 bg-white shadow rounded-xl">
             <h3 className="font-semibold mb-2">🎯 Personalized Planning</h3>
             <p className="text-gray-600">
-              Every trip is completely customized based on your preferences and budget.
+              Every trip is completely customized based on your preferences.
             </p>
           </div>
 
           <div className="p-6 bg-white shadow rounded-xl">
             <h3 className="font-semibold mb-2">💡 Transparency</h3>
             <p className="text-gray-600">
-              No hidden costs. We provide clear pricing and honest suggestions.
+              No hidden costs. Clear pricing and honest recommendations.
             </p>
           </div>
 
           <div className="p-6 bg-white shadow rounded-xl">
             <h3 className="font-semibold mb-2">🎒 Travel Freedom</h3>
             <p className="text-gray-600">
-              Travel your way — solo, couple, family, or friends.
+              Travel your way — solo, couple, family, or group trips.
             </p>
           </div>
         </div>
@@ -208,13 +209,8 @@ function Home() {
 
 
 		<button
-		  onClick={() =>
-		    window.open(
-		      "https://docs.google.com/forms/d/e/1FAIpQLSdTstF74bgWi957hsJ6DWa_2BWpFgKD0rTtAn7awuK1kY0a7g/viewform",
-		      "_blank"
-		    )
-		  }
-		  className="bg-[#F7941D] text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600"
+		  onClick={() => navigate("/plan")}
+		  className="bg-[#F7941D] text-white px-6 py-3 rounded-lg font-semibold"
 		>
 		  Craft My Trip 🚀
 		</button>
