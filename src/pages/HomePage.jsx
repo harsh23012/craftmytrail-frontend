@@ -98,6 +98,11 @@ function Home() {
 	          image: "https://media.istockphoto.com/id/1225793683/photo/mountain-gap-with-river-flowing-and-green-forests.webp?a=1&b=1&s=612x612&w=0&k=20&c=x6rPNAzN-USPyp35XIWhyUmxEYpuuGlnOnYmdh_gI5k=",
 	          slug: "coorg",
 	        },
+			{
+				name: "Gokarna",
+				image: "https://media.istockphoto.com/id/590043276/photo/lonely-coast-and-sea.webp?a=1&b=1&s=612x612&w=0&k=20&c=3NmM9Miz5TNcHpLoZMoVfMkTrGPhH6vQeOV193EP_Dg=",
+				slug: "gokarna",
+		    },
 	      ].map((place) => (
 	        <div
 	          key={place.name}

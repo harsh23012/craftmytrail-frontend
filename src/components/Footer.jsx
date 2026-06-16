@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import instaLogo from "../assets/instalogo.png";
+import logo from "../assets/craftmytrail.png";
 function Footer() {
   const navigate = useNavigate();
 
@@ -9,12 +10,24 @@ function Footer() {
       <div className="grid md:grid-cols-4 gap-6 text-sm">
 
         {/* ✅ BRAND */}
-        <div>
-          <h2 className="text-lg font-bold mb-1">CraftMyTrail ✈️</h2>
-          <p className="text-gray-300 text-xs">
-            Your Journey, Crafted Just For You
-          </p>
-        </div>
+		{/* ✅ BRAND */}
+		<div>
+		  <div className="flex items-center gap-2 mb-2">
+		    <img
+		      src={logo}
+		      alt="logo"
+		      className="w-9 h-9 rounded-full"
+		    />
+
+		    <h2 className="text-lg font-bold">
+		      CraftMyTrail
+		    </h2>
+		  </div>
+
+		  <p className="text-gray-300 text-xs">
+		    Your Journey, Crafted Just For You
+		  </p>
+		</div>
 
         {/* ✅ NAVIGATION */}
         <div>
