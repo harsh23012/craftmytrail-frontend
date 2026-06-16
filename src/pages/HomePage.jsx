@@ -42,12 +42,19 @@ function Home() {
               Contact
             </button>
 
-            <button
-              onClick={() => navigate("/plan")}
-              className="bg-[#F7941D] text-white px-4 py-2 rounded-lg"
-            >
-              Plan Trip
-            </button>
+
+			<button
+			  onClick={() =>
+			    window.open(
+			      "https://docs.google.com/forms/d/e/1FAIpQLSdTstF74bgWi957hsJ6DWa_2BWpFgKD0rTtAn7awuK1kY0a7g/viewform",
+			      "_blank"
+			    )
+			  }
+			  className="bg-[#F7941D] text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600"
+			>
+			  Plan Trip
+			</button>
+
           </div>
 
           {/* Mobile Menu Button */}
@@ -199,12 +206,19 @@ function Home() {
           Ready to Plan Your Trip?
         </h2>
 
-        <button
-          onClick={() => navigate("/plan")}
-          className="bg-[#F7941D] px-8 py-3 rounded-lg"
-        >
-          Start Planning 🚀
-        </button>
+
+		<button
+		  onClick={() =>
+		    window.open(
+		      "https://docs.google.com/forms/d/e/1FAIpQLSdTstF74bgWi957hsJ6DWa_2BWpFgKD0rTtAn7awuK1kY0a7g/viewform",
+		      "_blank"
+		    )
+		  }
+		  className="bg-[#F7941D] text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600"
+		>
+		  Craft My Trip 🚀
+		</button>
+
       </section>
 
       {/* ✅ FOOTER */}
