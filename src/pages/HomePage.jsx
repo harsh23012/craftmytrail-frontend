@@ -1,11 +1,10 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 import { motion } from "framer-motion";
-import logo from "../assets/craftmytrail.png";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 function Home() {
   const navigate = useNavigate();
-  const [menuOpen, setMenuOpen] = useState(false);
 
   const openForm = () => {
     window.open(
@@ -18,78 +17,12 @@ function Home() {
     <div className="min-h-screen font-[Poppins]">
 
       {/* ✅ NAVBAR */}
-      <nav className="sticky top-0 bg-white shadow-md z-50">
-        <div className="flex justify-between items-center px-6 py-4">
-
-          {/* ✅ LOGO */}
-          <div className="flex items-center gap-2">
-            <img
-              src={logo}
-              alt="logo"
-              className="w-10 h-10 rounded-full object-cover"
-            />
-            <h1 className="text-xl font-bold text-[#0A2342]">
-              CraftMyTrail
-            </h1>
-          </div>
-
-          {/* ✅ DESKTOP MENU */}
-          <div className="hidden md:flex gap-6 items-center">
-            <button onClick={() => navigate("/")}>Home</button>
-            <button onClick={() => navigate("/destinations")}>
-              Destinations
-            </button>
-            <button onClick={() => navigate("/itineraries")}>
-              Itineraries
-            </button>
-            <button onClick={() => navigate("/about")}>
-              About
-            </button>
-            <button onClick={() => navigate("/contact")}>
-              Contact
-            </button>
-
-			<button
-			  onClick={() => navigate("/plan")}
-			  className="bg-[#F7941D] text-white px-6 py-3 rounded-lg font-semibold"
-			>
-			  Plan Trip 🚀
-			</button>
-
-          </div>
-
-          {/* ✅ MOBILE MENU BUTTON */}
-          <button
-            className="md:hidden text-xl"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            ☰
-          </button>
-        </div>
-
-        {/* ✅ MOBILE MENU */}
-        {menuOpen && (
-          <div className="md:hidden px-6 pb-4 flex flex-col gap-3 bg-white">
-            <button onClick={() => navigate("/")}>Home</button>
-            <button onClick={() => navigate("/destinations")}>Destinations</button>
-            <button onClick={() => navigate("/itineraries")}>Itineraries</button>
-            <button onClick={() => navigate("/about")}>About</button>
-            <button onClick={() => navigate("/contact")}>Contact</button>
-
-            <button
-              onClick={openForm}
-              className="bg-[#F7941D] text-white px-4 py-2 rounded-lg"
-            >
-              Plan Trip
-            </button>
-          </div>
-        )}
-      </nav>
+	  <Navbar />
 
       {/* ✅ HERO SECTION */}
       <section className="bg-gradient-to-br from-[#0A2342] via-blue-900 to-[#0A2342] text-white py-24 px-6 text-center relative overflow-hidden">
 
-        {/* Glow background */}
+        {/* Glow effects */}
         <div className="absolute w-[500px] h-[500px] bg-[#F7941D] opacity-20 rounded-full blur-3xl top-[-100px] left-[-100px]" />
         <div className="absolute w-[400px] h-[400px] bg-blue-400 opacity-20 rounded-full blur-3xl bottom-[-100px] right-[-100px]" />
 
@@ -126,80 +59,132 @@ function Home() {
             </button>
           </div>
 
-          <div className="mt-8 bg-[#F7941D] inline-block px-6 py-2 rounded-full">
+          <p className="text-sm mt-4 text-gray-300">
+            You will be redirected to a secure form to submit your request.
+          </p>
+
+          <div className="mt-6 bg-[#F7941D] inline-block px-6 py-2 rounded-full">
             🎉 Free itinerary for first 50 users!
           </div>
         </motion.div>
       </section>
 
-      {/* ✅ FEATURED DESTINATIONS */}
-      <section className="py-16 px-6 text-center">
-        <h2 className="text-3xl font-bold text-[#0A2342] mb-10">
-          Featured Destinations
-        </h2>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {["Munnar", "Goa", "Coorg"].map((place) => (
-            <div key={place} className="bg-white p-6 rounded-xl shadow hover:shadow-lg">
-              <div className="h-40 bg-gray-200 rounded mb-4" />
-              <h3 className="font-semibold text-lg">{place}</h3>
-              <p className="text-gray-600">Best travel experience</p>
-            </div>
-          ))}
-        </div>
-      </section>
+	  {/* ✅ FEATURED DESTINATIONS */}
+	  <section className="py-20 px-6 bg-gray-50 text-center">
+	    <h2 className="text-3xl md:text-4xl font-bold text-[#0A2342] mb-4">
+	      Featured Destinations
+	    </h2>
 
-      {/* ✅ WHY CHOOSE US */}
-      <section className="py-16 px-6 text-center">
-        <h2 className="text-3xl font-bold text-[#0A2342] mb-10">
-          Why Choose CraftMyTrail?
-        </h2>
+	    <p className="text-gray-600 mb-10">
+	      Discover handpicked destinations with curated itineraries and travel guides.
+	    </p>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="p-6 bg-white shadow rounded-xl">
-            <h3 className="font-semibold mb-2">🎯 Personalized Planning</h3>
-            <p className="text-gray-600">
-              Every trip is completely customized based on your preferences.
-            </p>
-          </div>
+	    <div className="grid md:grid-cols-3 gap-8">
 
-          <div className="p-6 bg-white shadow rounded-xl">
-            <h3 className="font-semibold mb-2">💡 Transparency</h3>
-            <p className="text-gray-600">
-              No hidden costs. Clear pricing and honest recommendations.
-            </p>
-          </div>
+	      {[
+	        {
+	          name: "Munnar",
+	          image: "https://images.unsplash.com/photo-1637066742971-726bee8d9f56?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bXVubmFyfGVufDB8fDB8fHww",
+	          slug: "munnar",
+	        },
+	        {
+	          name: "Goa",
+	          image: "https://images.unsplash.com/photo-1560179406-1c6c60e0dc76?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8R29hfGVufDB8fDB8fHww",
+	          slug: "goa",
+	        },
+	        {
+	          name: "Coorg",
+	          image: "https://media.istockphoto.com/id/1225793683/photo/mountain-gap-with-river-flowing-and-green-forests.webp?a=1&b=1&s=612x612&w=0&k=20&c=x6rPNAzN-USPyp35XIWhyUmxEYpuuGlnOnYmdh_gI5k=",
+	          slug: "coorg",
+	        },
+	      ].map((place) => (
+	        <div
+	          key={place.name}
+	          onClick={() => navigate(`/destination/${place.slug}`)}
+	          className="cursor-pointer bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300"
+	        >
+	          
+	          {/* ✅ IMAGE */}
+	          <img
+	            src={place.image}
+	            alt={place.name}
+	            className="w-full h-48 object-cover"
+	          />
 
-          <div className="p-6 bg-white shadow rounded-xl">
-            <h3 className="font-semibold mb-2">🎒 Travel Freedom</h3>
-            <p className="text-gray-600">
-              Travel your way — solo, couple, family, or group trips.
-            </p>
-          </div>
-        </div>
-      </section>
+	          {/* ✅ CONTENT */}
+	          <div className="p-5">
+	            <h3 className="text-xl font-semibold text-[#0A2342]">
+	              {place.name}
+	            </h3>
 
-      {/* ✅ HOW IT WORKS */}
-      <section className="bg-gray-100 py-16 text-center">
-        <h2 className="text-3xl font-bold mb-10 text-[#0A2342]">
-          How It Works
-        </h2>
+	            <p className="text-gray-600 text-sm mt-2">
+	              Explore stunning landscapes, hidden gems, and curated travel experiences.
+	            </p>
 
-        <div className="grid md:grid-cols-3 gap-8 px-6">
-          <div>
-            <div className="text-4xl mb-2">📝</div>
-            <h4>Fill Details</h4>
-          </div>
-          <div>
-            <div className="text-4xl mb-2">⚙️</div>
-            <h4>We Plan</h4>
-          </div>
-          <div>
-            <div className="text-4xl mb-2">📩</div>
-            <h4>Receive Plan</h4>
-          </div>
-        </div>
-      </section>
+	            <button className="mt-4 text-[#F7941D] font-semibold">
+	              View Details →
+	            </button>
+	          </div>
+
+	        </div>
+	      ))}
+
+	    </div>
+	  </section>
+	  
+
+	  {/* ✅ WHY CHOOSE US */}
+	  <section className="py-20 px-6 bg-gray-50 text-center">
+	    <h2 className="text-3xl md:text-4xl font-bold text-[#0A2342] mb-4">
+	      Why Choose CraftMyTrail?
+	    </h2>
+
+	    <p className="text-gray-600 max-w-2xl mx-auto mb-12">
+	      We don’t just plan trips — we craft personalized travel experiences designed
+	      around your needs, budget, and travel style. Here’s what makes us different.
+	    </p>
+
+	    <div className="grid md:grid-cols-3 gap-8">
+
+	      {/* ✅ CARD 1 */}
+	      <div className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300">
+	        <div className="text-4xl mb-4">🎯</div>
+	        <h3 className="text-xl font-semibold mb-3 text-[#0A2342]">
+	          Personalized Planning
+	        </h3>
+	        <p className="text-gray-600 text-sm">
+	          Every itinerary is customized based on your travel goals, interests,
+	          budget, and preferences — no generic packages.
+	        </p>
+	      </div>
+
+	      {/* ✅ CARD 2 */}
+	      <div className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300">
+	        <div className="text-4xl mb-4">💡</div>
+	        <h3 className="text-xl font-semibold mb-3 text-[#0A2342]">
+	          Transparency & Trust
+	        </h3>
+	        <p className="text-gray-600 text-sm">
+	          Get complete clarity on costs, destinations, and activities — no hidden
+	          charges, just honest travel planning.
+	        </p>
+	      </div>
+
+	      {/* ✅ CARD 3 */}
+	      <div className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300">
+	        <div className="text-4xl mb-4">🎒</div>
+	        <h3 className="text-xl font-semibold mb-3 text-[#0A2342]">
+	          Travel Freedom
+	        </h3>
+	        <p className="text-gray-600 text-sm">
+	          Whether it’s solo travel, a romantic getaway, or a family vacation —
+	          your journey is fully flexible and designed your way.
+	        </p>
+	      </div>
+
+	    </div>
+	  </section>
 
       {/* ✅ CTA */}
       <section className="bg-[#0A2342] text-white text-center py-16">
@@ -207,20 +192,16 @@ function Home() {
           Ready to Plan Your Trip?
         </h2>
 
-
-		<button
-		  onClick={() => navigate("/plan")}
-		  className="bg-[#F7941D] text-white px-6 py-3 rounded-lg font-semibold"
-		>
-		  Craft My Trip 🚀
-		</button>
-
+        <button
+          onClick={openForm}
+          className="bg-[#F7941D] text-white px-6 py-3 rounded-lg font-semibold"
+        >
+          Craft My Trip 🚀
+        </button>
       </section>
 
       {/* ✅ FOOTER */}
-      <footer className="text-center py-6 text-gray-500">
-        © 2026 CraftMyTrail — Your Journey, Crafted Just For You
-      </footer>
+      <Footer />
     </div>
   );
 }
