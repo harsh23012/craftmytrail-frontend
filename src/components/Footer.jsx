@@ -45,8 +45,8 @@ function Footer() {
           <h3 className="font-semibold mb-2">Quick Links</h3>
           <ul className="space-y-1 text-gray-300">
             <li onClick={() => navigate("/contact")} className="cursor-pointer hover:text-white">Contact</li>
-            <li className="hover:text-white cursor-pointer">Privacy Policy</li>
-            <li className="hover:text-white cursor-pointer">Terms</li>
+            <li  onClick={() => navigate("/privacy")} className="hover:text-white cursor-pointer">Privacy Policy</li>
+            <li onClick={() => navigate("/terms")} className="hover:text-white cursor-pointer">Terms</li>
           </ul>
         </div>
 
@@ -55,7 +55,12 @@ function Footer() {
           <h3 className="font-semibold mb-2">Contact</h3>
           <ul className="space-y-1 text-gray-300">
             <li>📞 +91 62050 93779</li>
-            <li>📧 craftmytrail@gmail.com</li>
+            <li className="flex items-center gap-2">
+			<a href="mailto:craftmytrail@gmail.com"
+				className="hover:text-[#F7941D]"
+			>  📧 craftmytrail@gmail.com
+		</a>
+			</li>
 			<li className="flex items-center gap-2">
 			  <img
 			    src={instaLogo}

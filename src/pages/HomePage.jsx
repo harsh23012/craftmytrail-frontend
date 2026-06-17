@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import logo from "../assets/craftmytrail.png";
 
 function Home() {
   const navigate = useNavigate();
@@ -20,18 +21,32 @@ function Home() {
 	  <Navbar />
 
       {/* ✅ HERO SECTION */}
-      <section className="bg-gradient-to-br from-[#0A2342] via-blue-900 to-[#0A2342] text-white py-24 px-6 text-center relative overflow-hidden">
+    <section className="bg-gradient-to-br from-[#0A2342] via-blue-900 to-[#0A2342] text-white pt-16 pb-24 px-6 text-center relative overflow-hidden">
 
         {/* Glow effects */}
         <div className="absolute w-[500px] h-[500px] bg-[#F7941D] opacity-20 rounded-full blur-3xl top-[-100px] left-[-100px]" />
         <div className="absolute w-[400px] h-[400px] bg-blue-400 opacity-20 rounded-full blur-3xl bottom-[-100px] right-[-100px]" />
 
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="relative z-10"
-        >
+		<motion.div
+		  initial={{ opacity: 0, y: 40 }}
+		  animate={{ opacity: 1, y: 0 }}
+		  transition={{ duration: 1 }}
+		  className="relative z-10 flex flex-col items-center justify-center"
+		>
+		<img
+		  src={logo}
+		  alt="CraftMyTrail Logo"
+		  className="
+		    w-20 h-20 
+		    rounded-full 
+		    mb-6 
+		    shadow-lg 
+		    border-2 border-white/30
+		    mx-auto
+		    hover:scale-110 
+		    transition duration-300
+		  "
+		/>
           <h1 className="text-3xl md:text-6xl font-bold mb-6 leading-tight">
             Your Journey <br />
             <span className="text-[#F7941D]">
