@@ -92,9 +92,6 @@ function Navbar() {
             <button onClick={() => navigate("/destinations")}>
               Destinations
             </button>
-            <button onClick={() => navigate("/itineraries")}>
-              Itineraries
-            </button>
             <button onClick={() => navigate("/about")}>
               About
             </button>

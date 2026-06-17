@@ -35,7 +35,6 @@ function Footer() {
           <ul className="space-y-1 text-gray-300">
             <li onClick={() => navigate("/")} className="cursor-pointer hover:text-white">Home</li>
             <li onClick={() => navigate("/destinations")} className="cursor-pointer hover:text-white">Destinations</li>
-            <li onClick={() => navigate("/itineraries")} className="cursor-pointer hover:text-white">Itineraries</li>
             <li onClick={() => navigate("/about")} className="cursor-pointer hover:text-white">About</li>
           </ul>
         </div>
